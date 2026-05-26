@@ -1,0 +1,114 @@
+
+#entireScreen{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin:auto;
+    height:100%;
+    width: 100%;
+    margin:0;
+}
+/* #entireScreen{
+    position: relative;
+    margin:auto;
+    height:100%;
+    width: 100%;
+    margin:0;
+    border: #252525;
+    color: darkblue;
+} */
+
+/* .main-navigation{
+    display: none;
+} */
+
+.HomeWrapper{
+    position: absolute;
+    top: 21px;
+    right: 23px;
+    left: 23px;
+    bottom: 21px;
+    margin:auto;
+    height: auto;
+    /* width:100%; */
+    border-radius: 0%;
+
+}
+
+
+
+
+a.navigation:link{
+    text-decoration: none;
+    position: absolute;
+    display: block;
+    font-family: 'Helvetica-Bold';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 0;
+    color:#BFBFBF;
+    width: auto;
+    line-height: 0.75;
+    
+}
+
+
+a.navigation:visited{
+    color: #BFBFBF;
+}
+
+
+.navigationHeader, .navigationFooter{
+    display: none;
+}
+
+
+a.navigation h1:hover{
+    color: #252525;
+    transition: color 0.5s;
+}
+
+
+a#name{
+    top: 0;
+    left: 0;
+    text-align: left;
+    margin: 0;
+    word-spacing: -4.5px;
+}
+
+a#about{
+    bottom: 0;
+    left: 0;
+    text-align: left;
+}
+
+a#work{
+    top: 0;
+    right: 0;
+    text-align: right;
+}
+
+a#contact{
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    
+}
+
+
+
+
+@media only screen and (max-width:1180px) {
+    
+
+    
+
+    
+
+
+
+}

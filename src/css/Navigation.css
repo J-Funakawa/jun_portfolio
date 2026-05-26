@@ -1,0 +1,119 @@
+
+
+.main-navigation {
+    position: sticky;
+    margin: auto;
+    height: 95px;
+    width: 100%;
+    margin: 0;
+    top: 0%;
+    z-index: 4;
+
+}
+
+.wrapper {
+    position: relative;
+    height: 40px;
+    border-radius: 0%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    filter: none;
+    
+}
+
+@font-face {
+    font-family: 'Helvetica-Bold';
+    src:url(../fonts/Helvetica-Font/Helvetica-Bold.ttf) format('truetype');
+  }
+  
+  
+.nav-link:link {
+    text-decoration: none;
+    position: absolute;
+    font-family: 'Helvetca-Bold';
+    font-size: 40px;
+    margin: 0;
+    color: #5e3e3e2a;
+    width: auto;
+    line-height: 0.75;
+
+    
+}
+
+.nav-link:visited {
+    color: #252525;
+}
+.nav-link h1:link {
+    filter: none;
+}
+
+.nav-link.active h1{
+    color: #252525;
+}
+
+
+.nav-link h1:hover {
+    color: #252525;
+    transition: color 0.5s;
+}
+
+#homeNavLink {
+    top: 0;
+    left: 23px;
+    text-align: left;
+    margin: 0;
+    word-spacing: -4.5px;
+    color: #404040;
+}
+
+#aboutNavLink {
+    top: 0;
+    right: 138px;
+    text-align: left;
+}
+
+#workNavLink {
+    top: 0;
+    right: 23px;
+    text-align: right;
+}
+
+#contactNavLink {
+    top: 0;
+    right: 306px;
+    text-align: right;
+    display: none;
+}
+
+#languageContainer {
+    position: absolute;
+    top: 43px;
+    right: 0px;
+}
+
+.language:link {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0;
+    color: #BFBFBF;
+    width: auto;
+    line-height: 0.75;
+    transition: color 0.5s;
+}
+
+.language:visited {
+    color: #BFBFBF;
+}
+
+.language:hover {
+    color: #252525;
+}
+
+#selectedLanguage {
+    color: #252525;
+}

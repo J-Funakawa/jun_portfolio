@@ -1,0 +1,150 @@
+
+.titleHolder p{
+
+}
+section{
+    width: 90%;
+    height: 80vh;
+    position: relative;
+   
+     border: 40px solid rgba(240, 240, 240, 0.562);    
+     animation: aboutCircles 8s ease-in-out infinite;
+     margin: 0 auto;
+     font-size: 5vw;
+    
+
+}
+
+section h4{
+
+    display: block;
+    position: absolute;
+    text-decoration: none;
+    font-style: normal;
+    transform: translate(-60%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 90;
+    margin: 0 auto;
+    color: black;
+    width: 60vw;
+}
+
+section p{
+    display: inline;
+    position: absolute;
+    text-decoration: none;
+    font-style: normal;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: 5px;
+    z-index: 90;
+    margin: 0;
+    color: black;
+    width: 40vw;
+}
+
+@keyframes aboutCircles {
+    0% {
+            border-radius:   50% 60% 50% 60% / 50% 60% 50% 60%;
+            /* transform: rotate(0deg); */
+            
+    } 
+
+50% {
+        border-radius:  60% 50% 60% 50% / 60% 50% 60% 50% ;
+        /* background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%); */
+        /* transform: rotate(180deg); */
+       
+}
+
+100% {
+    border-radius:  50% 60% 50% 60% / 50% 60% 50% 60%;
+    /* transform: rotate(360deg); */
+    
+} 
+}
+
+.leftCircle, .rightCircle{
+    height: 1vh;
+    width: 1vh;
+    left: 70%;
+    top: 90%;
+    position: absolute;
+    animation: aboutCircles 8s ease-in-out infinite;
+    border: 40px solid rgba(240, 240, 240, 0.562);    
+    margin: 0 auto;
+    opacity: 0.4;
+}
+
+.leftCircle{
+    transform: translate(-40%, -50%);
+    background-color: rgba(0, 136, 255, 0.396);
+/* position: relative;
+z-index: -1;
+     */
+}
+
+
+.rightCircle{
+    transform: translate(-60%, -50%);
+    background-color: rgba(255, 0, 187, 0.396);
+
+}
+
+.aboutMain{
+    width: 80%;
+    height: auto;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+
+.outerContainer{
+    width: 80%;
+    height: auto;
+    grid-template-columns:repeat(2,2fr) ;
+    display: grid;
+    gap: 20px;
+    /* border-radius: 10px; */
+    padding: 20px;
+    margin: 0 auto;
+    margin-bottom:  5vh;
+    border: solid 1px #efefef;
+}
+.innerContainer{
+   display: block;
+}
+
+.innerContainer p{
+    display: block;
+ }
+ 
+
+.profileImage{
+   
+    width: 70vw;
+    height: 70vw;
+    object-fit:cover;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    animation: morph 8s ease-in-out infinite;
+    border: 40px solid rgba(240, 240, 240, 0.562);    margin: 0 auto;
+        
+    }
+    
+@media only screen and (max-width:900px) {
+    .outerContainer{
+        width: 100%;
+        
+        grid-template-columns:repeat(1,1fr) ;
+        
+    }
+
+}
+

@@ -1,0 +1,289 @@
+a#name{
+    color: #252525;
+}
+
+.maincontentsFace{
+    height: 570px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    float: left;
+    height: 570px;
+    width: 890px;
+    /* display: none; */
+    
+}
+
+
+.faceContainer{
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin:auto;
+    width: 500px;
+    /* 500px/1440px */
+    height: 300px;
+    /* 300px/790px */
+}
+
+
+.eyeleftSpace, .eyerightSpace{
+    position: absolute;
+    width: 44%; 
+    height: 73.3%;
+    align-items: center;
+}
+
+
+.eyeleftSpace{
+    left:0;
+    top:0;
+}
+
+
+.eyerightSpace{
+    right: 0;
+    top: 0;
+}
+
+
+@keyframes openEyes{
+    0%{
+        height: 0;
+        border: 0;
+        border-radius: 0%;
+    }
+    100%{
+        height: 200px;
+        border: 3px solid black;
+        border-radius: 50%;
+    }
+}
+
+.eyeleft{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* border: 3px solid black; */
+    background-color: white;
+    overflow: hidden;
+    animation:none;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    box-shadow: 0 0 20px #EDEDED;
+}
+
+.eyeright{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* border: 3px solid black; */
+    background-color: white;
+    
+    overflow: hidden;
+    animation:none;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    box-shadow: 0 0 20px #EDEDED;
+}
+
+
+.eyeleft,.eyeright{
+    animation:none;
+    /* animation: aboutCircles 8s ease-in-out infinite; */
+    /* border: 30px solid rgba(240, 240, 240, 0.562);     */
+    box-sizing: content-box;
+
+    /* box-shadow: inset 0px 0px 2px black; */
+}
+
+
+
+.eyeball{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width:140px;
+    height:140px;
+    margin:auto;
+    background-color: rgb(46, 46, 46);
+    border-radius: 50%;
+    opacity: 1;
+    animation: none;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes scaleDownEyeball{
+    0%{
+        width:140px;
+        height:140px;  
+    }
+    
+    100%{
+        width:120px;
+        height:120px;
+    }
+}
+
+@keyframes scaleDownEyeballReset{
+    0%{
+        width: 120px;
+        height: 120px;  
+    }
+    
+    100%{
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@keyframes scaleUpEye{
+    0%{
+        width: 200px;
+        height: 200px;  
+    }
+    
+    100%{
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@keyframes scaleUpEyeReset{
+    0%{
+        width: 220px;
+        height: 220px;  
+    }
+    
+    100%{
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+
+
+@keyframes redBlushLineOn {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes redBlushLineOff {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+.blushSpace{
+    position: absolute;
+    width: inherit;
+    height: 26.66%;
+    top: 73.33%;
+
+}
+
+.blushRedLine{
+    width: 30%;
+    position: absolute;
+    opacity: 0;
+    animation: none;
+}
+
+#blushRedLineLeft{
+    left:7%;
+
+}
+
+#blushRedLineRight{
+    right:7%;
+}
+
+@keyframes leanedMouseOn {
+    0%{
+        right: 200px;
+        transform: rotate(30deg);
+        opacity: 0;
+    }
+
+    100%{
+        right: 0;
+        transform: rotate(0deg);
+        opacity: 1;
+        
+    }
+}
+
+@keyframes leanedMouseOff {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#leanedMouse{
+    width: 50%;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+    opacity: 0;
+    animation: none;
+}
+
+
+@media only screen and (max-width:1180px) {
+    #entireScreen{
+        height: 90vh;
+    }
+
+    a#nameHeader{
+        color: #252525;
+    }
+
+    .maincontentsFace{
+        width: 180px;
+        height: 300px;
+        transform: scale(0.4);
+        right: 140px;
+        
+    }
+
+}
+
+
