@@ -11,7 +11,7 @@ const worksData = [
   // { id: 7, imagePath: require("../image/work_index/top_creative_works.jpg"), alt: 'ArtSharingWebsiteDetail', link: '/works/creativeworks' ,tag1: "Branding",tag2: "UX Design", number:"07", title:"Artist Collaboration Hub", status: "School Project / 2022(2nd Year)", question:"How might we help artists to collaborate on the website?" },
   // { id: 8, imagePath: require("../image/work_index/top_atomos.JPG"), alt: 'ArtSharingWebsiteDetail', link: '/works/atomos' ,tag1: "Design Research",tag2: "Product Development", number:"08", title:"An Ice breaker for workshop", status: "Client Work / 2016", question:"How might we design a new computer for students?" },
   // { id: 9, imagePath: require("../image/work_index/top_printer.png"), alt: 'ArtSharingWebsiteDetail', link: '/works/ethnography' ,tag1: "",tag2: "Design Research", number:"09", title:"Ethnography Research", status: "School Project / 2022(2nd Year)", question:"How might we identify the issue of the long line of printing" },       
-  // { id: 7, imagePath: require("../image/about/profile.jpeg"), alt: 'ArtSharingWebsiteDetail', link: '/about', tag1: " ", tag2: "Service Designer ", number: "About", title: "Jun Funakawa", status: "Human / Born in 1999", question: "How might we create an app for first-time pet owners?" }
+  { id: 7, imagePath: require("../image/about/profile.jpeg"), alt: 'ArtSharingWebsiteDetail', link: '/about', tag1: " ", tag2: "Service Designer ", number: "About", title: "Jun Funakawa", status: "Human / Born in 1999", question: "How might we create an app for first-time pet owners?" }
 
 ];
 
