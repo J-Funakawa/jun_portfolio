@@ -21,6 +21,9 @@ const DesktopMenu = () => {
         <Link to="/workhome" className={`nav-link ${isCurrentPath('/workhome') ? 'active' : ''}`} id="workNavLink">
           <h1>Work</h1>
         </Link>
+        <Link to="/worksv2" className={`nav-link ${isCurrentPath('/worksv2') ? 'active' : ''}`} id="worksv2NavLink">
+          <h1>Works v2</h1>
+        </Link>
         <Link to="/contact" className={`nav-link ${isCurrentPath('/contact') ? 'active' : ''}`} id="contactNavLink">
           <h1>Contact</h1>
         </Link>

@@ -69,8 +69,14 @@
 
 #aboutNavLink {
     top: 0;
-    right: 138px;
+    right: 390px;
     text-align: left;
+}
+
+#worksv2NavLink {
+    top: 0;
+    right: 155px;
+    text-align: right;
 }
 
 #workNavLink {

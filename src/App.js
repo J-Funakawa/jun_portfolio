@@ -17,6 +17,7 @@ import PetApp from './components/works/PetApp';
 import Safety from './components/works/Safety';
 import AccountManager from './components/works/AccountManager';
 import TravelOffline from './components/works/TravelOffline';
+import WorksV2 from './components/WorksV2';
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/works/traveloffline" element={<TravelOffline />} />
         <Route path="/works/accountmanager" element={<AccountManager />} />
         <Route path="/workhome" element={<WorkHome />} />
+        <Route path="/worksv2" element={<WorksV2 />} />
  
         
         <Route path="/" element={<Home />} />

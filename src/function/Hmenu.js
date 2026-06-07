@@ -18,6 +18,9 @@ class HamburgerMenu extends React.Component {
         <a className="menu-item" href="/workhome">
           <h2 className='nav-header'>Work</h2>
         </a>
+        <a className="menu-item" href="/worksv2">
+          <h2 className='nav-header'>Works v2</h2>
+        </a>
         <a className="menu-item" href="/about">
           <h2 className='nav-header'>About</h2>
           
