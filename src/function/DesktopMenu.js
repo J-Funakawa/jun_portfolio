@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import '../css/Navigation.css';
 import '../css/Text.css';
 
-const DesktopMenu = () => {
+const DesktopMenu = ({ basePath = '' }) => {
   const location = useLocation();
 
   // Function to determine if the current path matches the given path
@@ -12,16 +12,16 @@ const DesktopMenu = () => {
   return (
     <nav className="main-navigation" id="mainNavigation">
       <div className="wrapper" id="navList">
-        <Link to="/" className={`nav-link ${isCurrentPath('/') ? 'active' : ''}`} id="homeNavLink">
+        <div className="nav-logo" id="homeNavLink">
           <h1>Jun Funakawa</h1>
-        </Link>
-        <Link to="/about" className={`nav-link ${isCurrentPath('/about') ? 'active' : ''}`} id="aboutNavLink">
+        </div>
+        <Link to={`${basePath}/about`} className={`nav-link ${isCurrentPath(`${basePath}/about`) ? 'active' : ''}`} id="aboutNavLink">
           <h1>About</h1>
         </Link>
-        <Link to="/workhome" className={`nav-link ${isCurrentPath('/workhome') ? 'active' : ''}`} id="workNavLink">
+        <Link to={`${basePath}/workhome`} className={`nav-link ${isCurrentPath(`${basePath}/workhome`) ? 'active' : ''}`} id="workNavLink">
           <h1>Work</h1>
         </Link>
-        <Link to="/contact" className={`nav-link ${isCurrentPath('/contact') ? 'active' : ''}`} id="contactNavLink">
+        <Link to={`${basePath}/contact`} className={`nav-link ${isCurrentPath(`${basePath}/contact`) ? 'active' : ''}`} id="contactNavLink">
           <h1>Contact</h1>
         </Link>
       </div>

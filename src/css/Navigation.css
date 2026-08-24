@@ -52,6 +52,23 @@
     color: #252525;
 }
 
+/* Logo: non-clickable, always black. Mirrors .nav-link:link layout since a
+   <div> does not match the :link pseudo-class. */
+.nav-logo {
+    text-decoration: none;
+    position: absolute;
+    font-family: 'Helvetica-Bold';
+    font-size: 40px;
+    margin: 0;
+    width: auto;
+    line-height: 0.75;
+    cursor: default;
+}
+
+.nav-logo h1 {
+    color: #252525;
+}
+
 
 .nav-link h1:hover {
     color: #252525;
