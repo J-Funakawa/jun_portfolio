@@ -36,12 +36,10 @@ const ClaudeDesign = () => {
 
            <div className='divMedium'>
                     <h2>Background</h2>
-                    <p>
-                    Commissions needed a strong design system to achieve sophisticated experience and establish the brand. However, the team had to give up the complex design system since the team lacked a front end developer.
-                    </p>
-                    <p>
-                    The team had to compromise implementation of an advanced design system since the team was constrained with two backend developers. As a designer, I took leadership to address this situation to solve the problem using the AI prototyping method.
-                    </p>
+                    <ul>
+                        <li>Commissions needed a strong design system to achieve sophisticated experience and establish the brand. However, the team had to give up the complex design system since the team lacked a front end developer.</li>
+                        <li>The team had to compromise implementation of an advanced design system since the team was constrained with two backend developers. As a designer, I took leadership to address this situation to solve the problem using the AI prototyping method.</li>
+                    </ul>
            </div>
 
            <div className='divMedium'>
@@ -53,87 +51,93 @@ const ClaudeDesign = () => {
                     I asked developers and product managers to understand the impediments to define the job of team members.
                     </p>
                     <p>
-                    <strong>Backend Developper</strong><br />
-                    I don't have a knowledge of the frontend to implement UI that requires large refactoring, animation. <br />
-                    Job: Implement UI following design handed off from users<br />
-                    Impediments: Don't have time to implement high level UI as scope largely expands for him
+                    <strong>Backend Developper</strong>
                     </p>
+                    <ul>
+                        <li>I don't have a knowledge of the frontend to implement UI that requires large refactoring, animation. </li>
+                        <li>Job: Implement UI following design handed off from users</li>
+                        <li>Impediments: Don't have time to implement high level UI as scope largely expands for him</li>
+                    </ul>
                     <p>
-                    <strong>Designer's job</strong><br />
-                    I want to prototype the concept in high fidelity to evaluate the design<br />
-                    I want to conduct usability testing using the prototype<br />
-                    I want to document the spec of UI as detail as possible without spending extra time for documentation<br />
-                    I want to hand off the design to the developer without taking developer's time. <br />
-                    Job: Create high fidelity prototype<br />
-                    Job: Get feedbacks using high fidelity prototype<br />
-                    Job: Document UI specs precisely<br />
-                    Job Handoff design without taking developper's time.
+                    <strong>Designer's job</strong>
                     </p>
+                    <ul>
+                        <li>I want to prototype the concept in high fidelity to evaluate the design</li>
+                        <li>I want to conduct usability testing using the prototype</li>
+                        <li>I want to document the spec of UI as detail as possible without spending extra time for documentation</li>
+                        <li>I want to hand off the design to the developer without taking developer's time. </li>
+                        <li>Job: Create high fidelity prototype</li>
+                        <li>Job: Get feedbacks using high fidelity prototype</li>
+                        <li>Job: Document UI specs precisely</li>
+                        <li>Job Handoff design without taking developper's time.</li>
+                    </ul>
            </div>
 
            <div className='divMedium'>
                     <h2>Design</h2>
-                    <p>
-                    I explored several tools to find the solution that fulfills all jobs raised in the team.
-                    </p>
-                    <p>
-                    I established a method leveraging cloud design capabilities.
-                    </p>
-                    <p>
-                    As a result the prototyping -&gt; Documentation -&gt; Handoff speed has been significantly decreased.
-                    </p>
+                    <ul>
+                        <li>I explored several tools to find the solution that fulfills all jobs raised in the team.</li>
+                        <li>I established a method leveraging cloud design capabilities.</li>
+                        <li>As a result the prototyping -&gt; Documentation -&gt; Handoff speed has been significantly decreased.</li>
+                    </ul>
            </div>
 
            <div className='divMedium'>
                     <h2>1.Setup</h2>
                     <p>
-                    <strong>Converted Local repository to the base of prototype</strong><br />
-                    Claude design can read local code. I input the copy of production code on my local laptop to Claude Design. <br />
-                    Claude Design recreates the screen accurately so the design doesn't need to recreate the screen on figma. <br />
-                    Design can prepare a prototype environment quickly.
+                    <strong>Converted Local repository to the base of prototype</strong>
                     </p>
+                    <ul>
+                        <li>Claude design can read local code. I input the copy of production code on my local laptop to Claude Design. </li>
+                        <li>Claude Design recreates the screen accurately so the design doesn't need to recreate the screen on figma. </li>
+                        <li>Design can prepare a prototype environment quickly.</li>
+                    </ul>
            </div>
 
            <div className='divMedium'>
                     <h2>2. Prototype</h2>
-                    <p>
-                    Firstly,  sketch out ideas in my sketch book. <br />
-                    Once design is confirmed, I prompt AI to generate the new screen on top of a copy of the production UI.<br />
-                    Claude Design AI will utilize the predefined design system and create a prototype quickly<br />
-                    If it's faster to use figma, create components in Figma and input to Claude Design
-                    </p>
+                    <ul>
+                        <li>Firstly,  sketch out ideas in my sketch book. </li>
+                        <li>Once design is confirmed, I prompt AI to generate the new screen on top of a copy of the production UI.</li>
+                        <li>Claude Design AI will utilize the predefined design system and create a prototype quickly</li>
+                        <li>If it's faster to use figma, create components in Figma and input to Claude Design</li>
+                    </ul>
            </div>
 
            <div className='divMedium'>
                     <h2>3. Review &amp; Refine</h2>
-                    <p>
-                    The claude design let users to share prototype internally<br />
-                    The designer utilizes edit tool to make tweaks to generated AI
-                    </p>
+                    <ul>
+                        <li>The claude design let users to share prototype internally</li>
+                        <li>The designer utilizes edit tool to make tweaks to generated AI</li>
+                    </ul>
            </div>
 
            <div className='divMedium'>
                     <h2>4. Test</h2>
-                    <p>
-                    Download standalone HTML from Claude Design<br />
-                    Upload the project to Vercel platform.<br />
-                    Test with users
-                    </p>
+                    <ul>
+                        <li>Download standalone HTML from Claude Design</li>
+                        <li>Upload the project to Vercel platform.</li>
+                        <li>Test with users</li>
+                    </ul>
            </div>
 
            <div className='divMedium'>
                     <h2>5. Document</h2>
-                    <p>
-                    Plan component architecture<br />
-                    Created a customized skill which included detailed instructions on generating documentation about selected components or views in the prototype.
-                    </p>
-                    <p>
-                    Architecture<br />
-                    Style instructions component by component<br />
-                    Tokens<br />
-                    Spacing<br />
-                    Behavior instructions
-                    </p>
+                    <ul>
+                        <li>Plan component architecture</li>
+                        <li>Created a customized skill which included detailed instructions on generating documentation about selected components or views in the prototype.
+                            <ul>
+                                <li>Architecture</li>
+                                <li>Style instructions component by component
+                                    <ul>
+                                        <li>Tokens</li>
+                                    </ul>
+                                </li>
+                                <li>Spacing</li>
+                                <li>Behavior instructions</li>
+                            </ul>
+                        </li>
+                    </ul>
                     <p>
                     -&gt; The AI will generate a detailed documentation without taking designers time.
                     </p>
@@ -141,11 +145,11 @@ const ClaudeDesign = () => {
 
            <div className='divMedium'>
                     <h2>6. Hand off</h2>
-                    <p>
-                    Created a customized skill to convert documentation to md file. <br />
-                    This md file states the acceptance criteria on the interface. <br />
-                    The backend developer attached this md file to their AI agent in the coding environment. The AI agent implements the interface utilizing design system tokens. Since the Claude Design and Production environment shares the same design system tokens, AI agents implement the UI with fairly high accuracy without taking developer's time.
-                    </p>
+                    <ul>
+                        <li>Created a customized skill to convert documentation to md file. </li>
+                        <li>This md file states the acceptance criteria on the interface. </li>
+                        <li>The backend developer attached this md file to their AI agent in the coding environment. The AI agent implements the interface utilizing design system tokens. Since the Claude Design and Production environment shares the same design system tokens, AI agents implement the UI with fairly high accuracy without taking developer's time.</li>
+                    </ul>
            </div>
 
            <hr />

@@ -1,8 +1,11 @@
 import React from 'react';
-import worksData from '../object/WorksData';
+import worksData, { getWorkNumber } from '../object/WorksData';
+import { useWorld } from '../context/WorldContext';
 
 const WorkTopSection = ({indexNum}) => {
     const ArrayNum = indexNum - 1
+    const { works: worldWorkIds } = useWorld();
+    const displayNumber = getWorkNumber(worksData[ArrayNum].id, worldWorkIds);
   return (
     <div className="topSection">
       <div className="contentHolder">
@@ -15,7 +18,7 @@ const WorkTopSection = ({indexNum}) => {
         </div>
         {/* <div className='vinette'></div> */}
         <div className="titleHolder">
-          <p>{worksData[ArrayNum].number}</p>
+          <p>{displayNumber}</p>
           <h4>
             {worksData[ArrayNum].title}
           </h4>

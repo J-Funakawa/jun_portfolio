@@ -83,3 +83,22 @@ p {
   color: #484848;
   display: inline-block;
 }
+
+/* Bullet lists inside case-study sections, matched to the body paragraph style. */
+.divMedium ul {
+  margin: 4px 0 12px;
+  padding-left: 22px;
+}
+
+.divMedium li {
+  font-size: 18px;
+  font-weight: normal;
+  font-family: "Lato-Regular";
+  line-height: 28px;
+  color: #484848;
+  margin-bottom: 2px;
+}
+
+.divMedium li ul {
+  margin: 2px 0 0;
+}

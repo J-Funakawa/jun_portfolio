@@ -25,12 +25,36 @@ const worksData = [
   // { id: 12, imagePath: require("../image/work_index/top_creative_works.jpg"), alt: 'ArtSharingWebsiteDetail', link: '/works/creativeworks' ,tag1: "Branding",tag2: "UX Design", number:"07", title:"Artist Collaboration Hub", status: "School Project / 2022(2nd Year)", question:"How might we help artists to collaborate on the website?" },
   // { id: 13, imagePath: require("../image/work_index/top_atomos.JPG"), alt: 'ArtSharingWebsiteDetail', link: '/works/atomos' ,tag1: "Design Research",tag2: "Product Development", number:"08", title:"An Ice breaker for workshop", status: "Client Work / 2016", question:"How might we design a new computer for students?" },
   // { id: 14, imagePath: require("../image/work_index/top_printer.png"), alt: 'ArtSharingWebsiteDetail', link: '/works/ethnography' ,tag1: "",tag2: "Design Research", number:"09", title:"Ethnography Research", status: "School Project / 2022(2nd Year)", question:"How might we identify the issue of the long line of printing" },
-  { id: 7, imagePath: require("../image/work_index/top_refresh_bar.jpg"), alt: 'ArtSharingWebsiteDetail', link: '/works/claudedesign', tag1: "UX design", tag2: "Product Management", number: "07", title: "Streamlining Prototyping to Design Handoff using Claude Design", status: "Professional Experience 2026", question: "" },
+  { id: 7, imagePath: require("../image/work_index/top_ai_streamline.png"), alt: 'ArtSharingWebsiteDetail', link: '/works/claudedesign', tag1: "UX design", tag2: "Product Management", number: "07", title: "Streamlining Prototyping to Design Handoff using Claude Design", status: "Professional Experience 2026", question: "" },
 
-  { id: 8, imagePath: require("../image/work_index/top_refresh_bar.jpg"), alt: 'ArtSharingWebsiteDetail', link: '/works/transactionmanagement', tag1: "UX design", tag2: "", number: "08", title: "Designing transaction management system for real estate agents and brokers.", status: "Professional Experience 2026", question: "" },
+  { id: 8, imagePath: require("../image/work_index/top_transactionmanagement.jpg"), alt: 'ArtSharingWebsiteDetail', link: '/works/transactionmanagement', tag1: "UX design", tag2: "", number: "08", title: "Designing transaction management system for real estate agents and brokers.", status: "Professional Experience 2026", question: "" },
 
   { id: 9, imagePath: require("../image/about/profile.jpeg"), alt: 'ArtSharingWebsiteDetail', link: '/about', tag1: " ", tag2: "Service Designer ", number: "About", title: "Jun Funakawa", status: "Human / Born in 1999", question: "How might we create an app for first-time pet owners?" }
 
 ];
+
+// The ordered list of works for a world: a list of ids -> objects (in that
+// order), or every work when the world has no selection (null).
+export const getWorldWorks = (worldWorkIds) =>
+  worldWorkIds
+    ? worldWorkIds.map((id) => worksData.find((w) => w.id === id)).filter(Boolean)
+    : worksData;
+
+// Display number for a work = its position among the numbered works within the
+// current world's ordered list (01, 02, ...). Non-numeric labels (e.g. About)
+// and works not present in the world fall back to the work's own `number`.
+export const getWorkNumber = (workId, worldWorkIds) => {
+  const list = getWorldWorks(worldWorkIds);
+  let order = 0;
+  for (const w of list) {
+    const isNumbered = /^\d+$/.test(String(w.number).trim());
+    if (isNumbered) order += 1;
+    if (w.id === workId) {
+      return isNumbered ? String(order).padStart(2, '0') : w.number;
+    }
+  }
+  const self = worksData.find((w) => w.id === workId);
+  return self ? self.number : '';
+};
 
 export default worksData;

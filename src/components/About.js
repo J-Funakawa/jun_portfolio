@@ -18,7 +18,7 @@ const About = () => {
 
   <div className="pagePicSpace">
  
-           <WorkTopSection indexNum="7" />
+           <WorkTopSection indexNum="9" />
 
       <main className='aboutMain'>
 
