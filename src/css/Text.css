@@ -30,6 +30,11 @@
   src:url(../fonts/Helvetica-Font/Helvetica-BoldOblique.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Lato-BoldItalic';
+  src: url(../fonts/Lato/Lato-BoldItalic.ttf) format('truetype');
+}
+
 
 body {
   margin: 0;

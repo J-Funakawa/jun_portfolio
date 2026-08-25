@@ -200,8 +200,8 @@ a#backButton img{
 
 .titleHolder p{
     position: relative;
-    font-family: "Helvetica";
-    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     /* top: -10px; */
     left: -20px;
     display: block;
@@ -223,13 +223,16 @@ a#backButton img{
     left: -20px;
     width: 100%;
     display: inline-block;
-    font-style: normal;
+    /* Inter variable font has real italic + weight axes, so request them
+       directly (no faux styling). */
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
     font-size: 5.5vh;
-    font-weight: bold;
+    font-weight: 700;
     margin: 0px;
     margin-top: 10px;
     line-height: calc(1.35em + 2px);
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     transform: rotate(-3deg);
     color: #3D3733;
     text-decoration: none;
@@ -238,7 +241,7 @@ a#backButton img{
 /* Beige marker highlight behind hero text (number, title, tags). Clones across
    wrapped lines so multi-line titles get a per-line highlight. */
 .heroHighlight{
-    background-color: #FFF2E6;
+    background-color: rgba(255, 242, 230, 0.90);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     padding: 0.02em 0.14em;
@@ -261,15 +264,20 @@ a#backButton img{
     position:absolute;
     width: 50vw;
     display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     font-style: normal;
     /* 80% of the heading (5.5vh), min 14px. */
     font-size: max(14px, 4.4vh);
     margin: 0px;
     right: 0px;
-    bottom: 72px;
+    /* Gap between the two tag lines matches the heading's line-height rhythm
+       (1.35em + 2px), applied to the tag font, on top of tag2's 10px offset. */
+    bottom: calc(12px + 1.35 * max(14px, 4.4vh));
     transform: rotate(-3deg);
     color: #3D3733;
-      max-width: 500px;
+      max-width: none;
+      white-space: nowrap;
       /* border: solid 1px #1658db; */
     text-align: right;
 }
@@ -278,6 +286,8 @@ a#backButton img{
     position:absolute;
     width: 50vw;
     display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     font-style: normal;
     font-size: max(14px, 4.4vh);
     margin: 0px;
@@ -285,7 +295,8 @@ a#backButton img{
     bottom: 10px;
     transform: rotate(-3deg);
     color: #3D3733;
-      max-width: 500px;
+      max-width: none;
+      white-space: nowrap;
       /* border: solid 1px #1658db; */
       text-align: right;
 }
@@ -412,7 +423,8 @@ hr{
     .titleTag1{
         /* 80% of the heading (6vw), min 14px. */
         font-size: max(14px, 4.8vw);
-        bottom:28px;
+        /* Gap matches the heading rhythm (1.35em + 2px), on top of tag2's -15px. */
+        bottom: calc(-13px + 1.35 * max(14px, 4.8vw));
 
     }
 
@@ -434,7 +446,7 @@ hr{
     
     .titleHolder h4{
         font-size: 6vw;
-        letter-spacing: 2px;
+        letter-spacing: 0.5px;
     }
 
     /* Smaller tape on mobile/tablet to match the smaller hero. */
