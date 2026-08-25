@@ -2,6 +2,39 @@
     /* border: solid red 1px; */
 }
 
+/* Subtle embossed texture behind individual work / about pages (those that
+   wrap the hero in .pagePicSpace). White base with dots scattered at irregular
+   positions across a large tile so they read as random rather than a grid.
+   Each dot is a highlight (top-left) + shadow (bottom-right) pair, so it reads
+   as gently raised. */
+body:has(.pagePicSpace){
+    background-color: #ffffff;
+    background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1.6px);
+    background-size: 100px 100px;
+    background-position:
+        14px 22px, 15px 23px,
+        63px 10px, 64px 11px,
+        41px 47px, 42px 48px,
+        86px 33px, 87px 34px,
+        22px 71px, 23px 72px,
+        70px 82px, 71px 83px,
+        92px 66px, 93px 67px;
+}
+
 
 
  :root {
@@ -90,21 +123,68 @@ a#backButton img{
 
 .imageHolder{
     /* border: solid 1px #db1616;  */
-    width:100%;
-    height: auto;
     position: relative;
+    /* 96vw wide, centered on screen, without moving the title, tags, or body.
+       The image and its light overlay both fill this box. */
+    /* 96vw wide, capped at 1320px on large screens. */
+    width: min(96vw, 1320px);
+    height: 75vh;
+    /* Pull the image up so the 75vh image is roughly centered in the viewport
+       (accounts for the 95px sticky nav and the 5vh top border). Only the
+       image moves; the headings are positioned against contentHolder. */
+    margin-top: calc(7.5vh - 95px);
+    /* Center on screen; the min() mirrors the width cap so it stays centered. */
+    margin-left: calc(50% - min(48vw, 660px));
     right: 0px;
     top: 0px;
-    
 }
 
+/* Translucent "tape" holding the hero image to the wall: blurred, slightly
+   warm strips placed diagonally over each corner. Allowed to overflow past the
+   image / screen edge. No z-index, so they sit above the image but below the
+   overlaid title/tags. */
+.heroTape{
+    position: absolute;
+    width: 170px;
+    height: 40px;
+    background-color: rgba(246, 240, 228, 0.35);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+}
+
+.heroTape--tl{ top: -20px; left: -34px; transform: rotate(-45deg); }
+.heroTape--tr{ top: -20px; right: -34px; transform: rotate(45deg); }
+.heroTape--bl{ bottom: -20px; left: -34px; transform: rotate(45deg); }
+.heroTape--br{ bottom: -20px; right: -34px; transform: rotate(-45deg); }
+
 .imageHolder img{
-    width: 100%; 
-    height: 65vh;
-    overflow:hidden;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    margin-top: 3vh;
-    
+    object-position: center;
+    display: block;
+    clip-path: url(#heroImageClip);
+}
+
+/* Soft light sheen from the top-left corner, matching the top-left light
+   source implied by the text-highlight shadow. Sits above the image, below
+   the overlaid title/tags. */
+.imageHolder::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    clip-path: url(#heroImageClip);
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.8) 10%,
+        rgba(255, 255, 255, 0.40) 15%,
+        rgba(255, 255, 255, 0.40) 19%,
+        rgba(255, 255, 255, 0.925) 20%,
+        rgba(255, 255, 255, 0.80) 23%,
+        rgba(255, 255, 255, 0.10) 40%,
+        rgba(255, 255, 255, 0.8) 100%);
 }
 
 
@@ -125,16 +205,15 @@ a#backButton img{
     /* top: -10px; */
     left: -20px;
     display: block;
-    font-style: oblique;
+    font-style: normal;
     font-size: 3.5vh;
     margin: 0px;
 
     transform: rotate(-3deg);
-    color: #252525;
+    color: #3D3733;
     margin-top: 0.4rem;
-    filter: drop-shadow(white 2px 2px 1px);  
     letter-spacing: 1px;
-    
+
 
 }
 
@@ -144,13 +223,26 @@ a#backButton img{
     left: -20px;
     width: 100%;
     display: inline-block;
-    font-style: oblique;
+    font-style: normal;
     font-size: 5.5vh;
+    font-weight: bold;
     margin: 0px;
     margin-top: 10px;
+    line-height: calc(1.35em + 2px);
+    letter-spacing: 4px;
     transform: rotate(-3deg);
-    color: #252525;
-    filter: drop-shadow(white 1px 1px 3px);
+    color: #3D3733;
+    text-decoration: none;
+}
+
+/* Beige marker highlight behind hero text (number, title, tags). Clones across
+   wrapped lines so multi-line titles get a per-line highlight. */
+.heroHighlight{
+    background-color: #FFF2E6;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 0.02em 0.14em;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -169,14 +261,14 @@ a#backButton img{
     position:absolute;
     width: 50vw;
     display: block;
-    font-style: oblique;
-    font-size: 5vh;
+    font-style: normal;
+    /* 80% of the heading (5.5vh), min 14px. */
+    font-size: max(14px, 4.4vh);
     margin: 0px;
     right: 0px;
-    bottom: 60px;
+    bottom: 72px;
     transform: rotate(-3deg);
-    color: #252525;
-    filter: drop-shadow(white 1px 1px 2px);  
+    color: #3D3733;
       max-width: 500px;
       /* border: solid 1px #1658db; */
     text-align: right;
@@ -186,14 +278,13 @@ a#backButton img{
     position:absolute;
     width: 50vw;
     display: block;
-    font-style: oblique;
-    font-size: 5vh;
+    font-style: normal;
+    font-size: max(14px, 4.4vh);
     margin: 0px;
     right: 0px;
     bottom: 10px;
     transform: rotate(-3deg);
-    color: #252525;
-    filter: drop-shadow(white 1px 1px 2px);  
+    color: #3D3733;
       max-width: 500px;
       /* border: solid 1px #1658db; */
       text-align: right;
@@ -300,7 +391,8 @@ hr{
     }
 
     .contentHolder{
-        height: 90vw;
+        /* Match the full-bleed square image so it doesn't overlap the body. */
+        height: 100vw;
 
     }
 
@@ -310,30 +402,24 @@ hr{
     }
 
     .imageHolder{
-        width: 100%; 
-        height: 100%;
-    }
-    
-    .imageHolder img{
-        width: 80vw;
-        height: 80vw;
-        overflow:hidden;
-        object-fit: cover;
-        
+        /* Full-bleed square, centered on screen. */
+        width: 100vw;
+        height: 100vw;
+        margin-top: 0;
+        margin-left: calc(50% - 50vw);
     }
 
     .titleTag1{
-        
-        font-size: 5.5vw;
-        bottom:15px;
-       
+        /* 80% of the heading (6vw), min 14px. */
+        font-size: max(14px, 4.8vw);
+        bottom:28px;
+
     }
 
     .titleTag2{
-        
-        font-size: 5.5vw;
+        font-size: max(14px, 4.8vw);
         bottom:-15px;
-       
+
     }
     .titleHolder{
         width: 90%;
@@ -348,11 +434,19 @@ hr{
     
     .titleHolder h4{
         font-size: 6vw;
-  
+        letter-spacing: 2px;
     }
-    
-    
-    
+
+    /* Smaller tape on mobile/tablet to match the smaller hero. */
+    .heroTape{
+        width: 110px;
+        height: 28px;
+    }
+    .heroTape--tl{ top: -14px; left: -24px; }
+    .heroTape--tr{ top: -14px; right: -24px; }
+    .heroTape--bl{ bottom: -14px; left: -24px; }
+    .heroTape--br{ bottom: -14px; right: -24px; }
+
     .descriptionHolder{
        
     
