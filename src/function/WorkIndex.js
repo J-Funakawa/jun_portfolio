@@ -43,7 +43,9 @@ const WorkIndex = ({ works }) => {
           <div key={work.id} className="gridDiv" id={`gridDiv${work.id}`}>
             <Link to={`${basePath}${work.link || '/default-link'}`} onClick={handleClick} style={{ textDecoration: 'none' }}>
 
-              <img className="gridImage" src={work.imagePath} alt={work.alt || 'Default Alt Text'} />
+              <div className="gridImageWrap">
+                <img className="gridImage" src={work.imagePath} alt={work.alt || 'Default Alt Text'} />
+              </div>
 
             <div className='gridText'>
               <p className='gridTextTag'>{work.tag1}<br />{work.tag2}</p>
