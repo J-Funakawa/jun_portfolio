@@ -66,28 +66,39 @@ const TransactionManagement = () => {
            </div>
 
            <div className='divMedium'>
-                    <h2>Design</h2>
+                    <h2>Design: Checklist Table</h2>
                     <p>
-                    <strong>Table Design</strong>
+                    <strong>Problem: task and document are separate concepts but the UI made it difficult for users to distinguish the difference.</strong> Brokers provide a set of tasks to agents. Each task asks for documents to be submitted. Agents can also launch a signature session using the templates provided by states.
                     </p>
-                    <p>
-                    <strong>Problem: task and document are separate concepts but the UI made it difficult for users to distinguish the difference.</strong>
-                    </p>
-                    <p>
-                    Brokers provide a set of tasks to agents. Each task asks for documents to be submitted. Agents can also launch a signature session using the templates provided by states.
-                    </p>
+                    <img
+                        src={require("../../image/work_TransactionManagement/separation.png")}
+                        alt="Separating task-level and document-level information"
+                    />
                     <p>
                     Although necessary, this structure made it hard to understand the different types of status: Task status communicates the review status, such as rejected, approved, and expired. Launching a signature for this task adds more information such as signing status, sent, signed, expired. I reviewed the information architecture to distinguish task level information and call-to-actions and document level information and CTAs. This process led to consolidating all the document related information to the document column and document management screen.
                     </p>
-                    <p>
-                    <strong>Document Management View</strong>
-                    </p>
+                    <img
+                        src={require("../../image/work_TransactionManagement/checklist_after.png")}
+                        alt="Task checklist after the redesign"
+                    />
+           </div>
+
+           <div className='divMedium'>
+                    <h2>Design: Document Management Modal</h2>
                     <p>
                     <strong>Problem: the system does not accommodate multiple documents per task.</strong> As negotiation goes, documents are accumulated over time such as original document, addendum, counter documents, and executed document. In their workflow, there are several times agents need to act on a group of documents, emailing agents for signature, submitting for review, downloading.
                     </p>
+                    <img
+                        src={require("../../image/work_TransactionManagement/modal_before.png")}
+                        alt="Document modal before the redesign"
+                    />
                     <p>
                     Therefore, <strong>I created a concept of folder and timeline view.</strong> Agents can accumulate documents in the folder. If there's a need to start from the beginning, they can create a new folder so they can separate documents from previous activities. The timeline view enables both brokers and agents to track the updates made to this folder over time as agents upload documents, in timeline view, launch design or archive documents.
                     </p>
+                    <img
+                        src={require("../../image/work_TransactionManagement/modal_after.png")}
+                        alt="Document modal after the redesign"
+                    />
            </div>
 
            <div className='divMedium'>
