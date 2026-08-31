@@ -51,6 +51,9 @@ const App = () => {
           <Route path="works/claudedesign" element={<ClaudeDesign />} />
           <Route path="works/transactionmanagement" element={<TransactionManagement />} />
         </Route>
+
+        {/* Any other/legacy link redirects to the default world's home. */}
+        <Route path="*" element={<Navigate to={`/${DEFAULT_WORLD}/workhome`} replace />} />
       </Routes>
     </Router>
   );

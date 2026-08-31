@@ -5,7 +5,7 @@
 //
 //   works: null        -> show every project in WorksData.js
 //   works: [7, 8, 1, 2] -> show only those project ids, in that order
-export const DEFAULT_WORLD = 'sds-inh';
+export const DEFAULT_WORLD = 'uds-crag';
 
 export const worlds = {
   'sds-inh': { works: null },

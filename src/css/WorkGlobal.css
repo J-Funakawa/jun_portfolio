@@ -317,7 +317,24 @@ main img{
     position: relative;
     width: 100%;
     margin-bottom: 20px;
-    
+
+}
+
+/* Label-only paragraphs (sub-headings like "Problem" or "Document Management
+   View") sit on their own line. Body paragraphs (with text) stay inline-block. */
+.divMedium p:has(> strong:only-child){
+    display: block;
+}
+
+/* Caption shown under a case-study image. */
+.imgCaption{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Lato-Regular";
+    color: #8a8a8a;
+    margin: -10px 0 28px;
 }
 
 .divLarge{
