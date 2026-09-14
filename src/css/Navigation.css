@@ -52,6 +52,23 @@
     color: #252525;
 }
 
+/* Logo: non-clickable, always black. Mirrors .nav-link:link layout since a
+   <div> does not match the :link pseudo-class. */
+.nav-logo {
+    text-decoration: none;
+    position: absolute;
+    font-family: 'Helvetica-Bold';
+    font-size: 40px;
+    margin: 0;
+    width: auto;
+    line-height: 0.75;
+    cursor: default;
+}
+
+.nav-logo h1 {
+    color: #252525;
+}
+
 
 .nav-link h1:hover {
     color: #252525;
@@ -116,4 +133,22 @@
 
 #selectedLanguage {
     color: #252525;
+}
+
+/* Compact top nav on the individual work / about pages (they wrap the hero in
+   .pagePicSpace). Home/index nav keeps the large 40px size. Desktop only, since
+   the burger menu replaces this nav below 768px. */
+div:has(> .pagePicSpace) .nav-link:link,
+div:has(> .pagePicSpace) .nav-logo,
+div:has(> .pagePicSpace) .nav-link h1,
+div:has(> .pagePicSpace) .nav-logo h1{
+    font-size: 24px;
+}
+
+div:has(> .pagePicSpace) #aboutNavLink{
+    right: 95px;
+}
+
+div:has(> .pagePicSpace) #homeNavLink{
+    word-spacing: normal;
 }

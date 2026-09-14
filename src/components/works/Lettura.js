@@ -2,6 +2,7 @@ import React from 'react';
 import WorkIndex from '../../function/WorkIndex';
 import worksData from '../../object/WorksData';
 import Navigation from '../../function/Navigation';
+import BackButton from '../../function/BackButton';
 import WorkTopSection from '../../function/ WorkTopSection';
 import Footer from '../../function/Footer';
 
@@ -14,7 +15,7 @@ const Lettura = () => {
   return (
   <div>
     <Navigation />
-    <a  id = "backButton"  href="../workhome"><img src={require("../../image/work_01/backbutton@4x.png")} /></a>
+    <BackButton />
 
     <div className="pagePicSpace">
         <WorkTopSection indexNum="4" />

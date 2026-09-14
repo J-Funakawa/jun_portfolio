@@ -19,7 +19,7 @@ const Footer = () => {
                     <p>
                     <strong>Email</strong>
                     <br />
-                    fjworks.5c@gmail.com
+                    jun.funakawa.work@gmail.com
                     </p>
                   
                     <p>
